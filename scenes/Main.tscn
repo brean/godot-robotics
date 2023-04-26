@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://oliuex2y1kd3"]
+[gd_scene load_steps=10 format=3 uid="uid://biva70qkac1oh"]
 
-[ext_resource type="Material" path="res://scenes/materials/red_material.tres" id="1_f02wi"]
+[ext_resource type="Material" uid="uid://3wsf72mctlae" path="res://materials/red_material.tres" id="1_di3hr"]
 [ext_resource type="Material" uid="uid://bwfuljapxepq7" path="res://materials/blue_material.tres" id="2_w47bg"]
+[ext_resource type="Script" path="res://scripts/Robot.gd" id="3_6v8b7"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_b6jfi"]
 
@@ -29,8 +30,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.51, 0)
 shape = SubResource("BoxShape3D_8qlkf")
 
 [node name="Box01" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.29999, 0.5, -2.11925)
-material_override = ExtResource("1_f02wi")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.29999, 0.5, -6.13805)
+material_override = ExtResource("1_di3hr")
 mesh = SubResource("BoxMesh_h7ut1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Box01"]
@@ -46,10 +47,10 @@ mesh = SubResource("BoxMesh_h7ut1")
 [node name="StaticBody3D" type="StaticBody3D" parent="Box02"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box02/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_50giv")
 
 [node name="Robot" type="CharacterBody3D" parent="."]
+script = ExtResource("3_6v8b7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Robot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
